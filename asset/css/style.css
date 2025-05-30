@@ -366,6 +366,12 @@ body {
 
 }
 
+/* Time Schedule */
+.card-blue {
+      background-color: green;
+      color: white;
+      border-radius: 1rem;
+    }
 
 /* service card */
 .service-card {
@@ -427,6 +433,92 @@ body {
     padding: 5px 10px;
   }
 }
+
+/* new service section */
+  .soft-border {
+    border-right: 1px solid #dee2e6 !important;
+  }
+
+  .nav-tabs .nav-link{
+    color:black !important
+  }
+
+  .nav-tabs .nav-link.active {
+    position: relative;
+    color: #198754 !important;
+    border: none;
+  }
+
+  .nav-tabs .nav-link.active::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #198754;
+    animation: slideIn 0.4s ease;
+  }
+
+  @keyframes slideIn {
+    from {
+      height: 0;
+      top: 0;
+    }
+    to {
+      height: 100%;
+      top: 0;
+    }
+  }
+
+  .nav-tabs .nav-link:hover {
+    background-color: #089e53 !important;
+    color: #ffffff !important;
+  }
+
+@media (max-width: 768px) {
+  .soft-border {
+    border-right: none !important;
+  }
+
+  .nav-tabs .nav-link {
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+.nav-tabs .nav-link.active::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .nav-tabs .nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #198754;
+    animation: slideBottom 0.4s ease forwards;
+  }
+
+  @keyframes slideBottom {
+    from {
+      width: 0;
+      left: 50%;
+    }
+    to {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+    .nav-tabs .nav-link:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
 
 /* Gallery section */
 .hover-overlay {
@@ -598,6 +690,7 @@ body {
 }
 
 
+
 /* review page  */
 .hero-sections {
       color: white;
@@ -642,4 +735,26 @@ body {
 
     .pagination {
       justify-content: center;
+    }
+
+    .page-link, .page-link{
+      color: green !important;
+      border: 1px solid green !important;
+    }
+    .active>.page-link, .page-link.active{
+      background-color:green !important;
+      color: white !important;
+      border: 1px solid green !important;
+    }
+
+    .footer ul li a:hover{
+         color: yellow !important;
+         font-weight: bold !important;
+    }
+  
+    .socialIcons :hover{
+         background-color: yellow !important;
+         border-radius: 50% !important;
+         padding: 5px;
+          color: green !important;
     }
