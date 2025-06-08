@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap 5 Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 280px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            padding: 20px;
+            overflow-y: auto;
+            border-right: 1px solid #dee2e6;
+        }
+
+        .main-content {
+            margin-left: 300px;
+            padding: 40px;
+        }
+
+        .sidebar img {
+            width: 60%;
+            border-radius: 50%;
+        }
+
+        .sidebar .nav-link {
+            padding: 12px;
+            font-weight: 500;
+            color: #343a40;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            color: #0d6efd;
+        }
+
+        .social-icons i {
+            font-size: 20px;
+            margin: 10px 10px 0 0;
+            cursor: pointer;
+            color: #495057;
+            transition: color 0.3s;
+        }
+
+        .social-icons i:hover {
+            color: #0d6efd;
+        }
+
+        section {
+            padding-bottom: 60px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        h1.section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0d6efd;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .skill-item {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.timeline {
+  position: relative;
+}
+
+.timeline .timeline-event {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.timeline .timeline-event .timeline-content {
+  position: relative;
+  width: calc(50% - 50px);
+}
+
+.timeline .timeline-event::before {
+  display: block;
+  content: "";
+  width: 2px;
+  height: calc(50% - 30px);
+  position: absolute;
+  background: #d2d2d2;
+  left: calc(50% - 1px);
+  top: 0;
+}
+
+.timeline .timeline-event::after {
+  display: block;
+  content: "";
+  width: 2px;
+  height: calc(50% - 30px);
+  position: absolute;
+  background: #d2d2d2;
+  left: calc(50% - 1px);
+  top: calc(50% + 30px);
+}
+
+.timeline .timeline-event:first-child::before {
+  display: none;
+}
+
+.timeline .timeline-event:last-child::after {
+  display: none;
+}
+
+.timeline .timeline-event:nth-child(even) .timeline-content {
+  margin-left: calc(50% + 50px);
+}
+
+.timeline .timeline-event:nth-child(odd) .timeline-content {
+  margin-left: 0;
+}
+
+.timeline .timeline-badge {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #d2d2d2;
+  top: calc(50% - 20px);
+  right: calc(50% - 20px);
+  border-radius: 50%;
+  text-align: center;
+  cursor: default;
+}
+
+.timeline .timeline-badge i {
+  font-size: 25px;
+  line-height: 40px;
+}
+
+@media (max-width: 600px) {
+  .timeline .timeline-event .timeline-content {
+    width: calc(100% - 70px);
+  }
+  .timeline .timeline-event::before {
+    left: 19px;
+  }
+  .timeline .timeline-event::after {
+    left: 19px;
+  }
+  .timeline .timeline-event:nth-child(even) .timeline-content {
+    margin-left: 70px;
+  }
+  .timeline .timeline-event:nth-child(odd) .timeline-content {
+    margin-left: 70px;
+  }
+  .timeline .timeline-badge {
+    left: 0;
+  }
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar text-center">
+        <img src="asset\images\Dr-Mustafiz-removebg-preview.png" alt="Profile" class="mb-3" />
+        <h4 class="mt-2">About Me</h4>
+        <p class="text-muted">Dr. Mustafizur Rahman</p>
+
+        <nav class="nav flex-column text-start">
+            <a class="nav-link" href="#training">
+                <i class="fa fa-graduation-cap me-2"></i> Training
+            </a>
+            <a class="nav-link" href="#awards">
+                <i class="fa fa-trophy me-2"></i> Awards
+            </a>
+            <a class="nav-link" href="#skills">
+                <i class="fa fa-lightbulb me-2"></i> Skills
+            </a>
+            <a class="nav-link" href="#qualification">
+                <i class="fa fa-certificate me-2"></i> Academic Qualification
+            </a>
+            <a class="nav-link" href="#experience">
+                <i class="fa fa-briefcase me-2"></i> Professional Experience
+            </a>
+        </nav>
+
+
+        <div class="mt-4 social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-snapchat"></i>
+            <i class="fab fa-pinterest"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Training Section -->
+        <section id="training" class="mb-5">
+            <h2 class="fw-bold mb-4 border-bottom pb-2 text-success text-center">Training</h2>
+
+            <div class="container-fluid">
+                <!-- First Row -->
+                <div class="row mb-4">
+                    <div class="col-md-6 ">
+                        <div
+                            class="p-3 bg-white border-0 border-start border-3 border-primary p-3 rounded shadow-sm h-100">
+                            <h5 class="text-success">Internship – Medicine & Surgery</h5>
+                            <p class="mb-1"><strong>Duration:</strong> 22/12/1994 – 21/12/1995</p>
+                            <p class="mb-0"><strong>Institution:</strong> Chittagong Medical College Hospital</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div
+                            class="p-3 bg-white border-0 border-start border-3 border-success p-3 rounded shadow-sm h-100">
+                            <h5 class="text-success">Gastro-Enterology</h5>
+                            <p class="mb-1"><strong>Duration:</strong> 01/01/1996 – 30/06/1996</p>
+                            <p class="mb-0"><strong>Institution:</strong> I.P.G.M.R, Dhaka</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Row -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div
+                            class="p-3 bg-white border-0 border-start border-3 border-warning p-3 rounded shadow-sm h-100">
+                            <h5 class="text-success">General Surgery</h5>
+                            <p class="mb-1"><strong>Duration:</strong> 07/07/1999 – 31/12/2002</p>
+                            <p class="mb-0"><strong>Institution:</strong> BSMMU, Dhaka</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div
+                            class="p-3 bg-white border-0 border-start border-3 border-danger  p-3 rounded shadow-sm h-100">
+                            <h5 class="text-success">Casualty (Emergency) Surgery</h5>
+                            <p class="mb-1"><strong>Duration:</strong> 01/01/2003 – 30/06/2003</p>
+                            <p class="mb-0"><strong>Institution:</strong> Dhaka Medical College, Dhaka</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Row -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div
+                            class="p-3 bg-white border-0 border-start border-3 border-info  p-3 rounded shadow-sm h-100">
+                            <h5 class="text-success">Hepatobiliary & Pancreatic Surgery</h5>
+                            <p class="mb-1"><strong>Duration:</strong> 01/01/2003 – 31/08/2008</p>
+                            <p class="mb-0"><strong>Institution:</strong> BSMMU, Dhaka</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<!-- Award Section -->
+       <section id="awards" class="mb-5">
+  <h2 class="fw-bold mb-4 border-bottom pb-2 text-success text-center">Awards</h2>
+
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="d-flex align-items-start bg-light p-3 rounded shadow-sm h-100">
+        <i class="fas fa-medal text-primary fs-2 me-3"></i>
+        <div>
+          <h5 class="mb-1">Best Clinical Performance Award</h5>
+          <small class="text-muted d-block">BSMMU, Dhaka – 2022</small>
+          <p class="mb-0">Recognized for exceptional patient care and leadership in clinical settings.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="d-flex align-items-start bg-light p-3 rounded shadow-sm h-100">
+        <i class="fas fa-trophy text-warning fs-2 me-3"></i>
+        <div>
+          <h5 class="mb-1">Gold Medal in Surgery</h5>
+          <small class="text-muted d-block">Dhaka Medical College – 2020</small>
+          <p class="mb-0">Awarded for top academic performance and surgical excellence.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="d-flex align-items-start bg-light p-3 rounded shadow-sm h-100">
+        <i class="fas fa-star text-success fs-2 me-3"></i>
+        <div>
+          <h5 class="mb-1">Dean's List Honor</h5>
+          <small class="text-muted d-block">Chittagong Medical College – 2019</small>
+          <p class="mb-0">Achieved outstanding GPA and consistent academic excellence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-5">
+  <h2 class="fw-bold mb-4 border-bottom pb-2 text-success text-center">Skills</h2>
+  <div class="row g-3">
+    <!-- Skill Item -->
+    <div class="col-6 col-sm-4 col-md-3">
+      <div class="skill-item bg-white p-3 rounded text-center h-100">
+        <i class="fa fa-stethoscope fa-2x text-primary mb-2"></i>
+        <h6>Pediatric Care</h6>
+      </div>
+    </div>
+    <!-- Add more skills similarly -->
+    <div class="col-6 col-sm-4 col-md-3">
+      <div class="skill-item bg-white p-3 rounded text-center h-100">
+        <i class="fa fa-heartbeat fa-2x text-danger mb-2"></i>
+        <h6>Cardiology</h6>
+      </div>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <div class="skill-item bg-white p-3 rounded text-center h-100">
+        <i class="fa fa-x-ray fa-2x text-success mb-2"></i>
+        <h6>Radiology</h6>
+      </div>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <div class="skill-item bg-white p-3 rounded text-center h-100">
+        <i class="fa fa-briefcase-medical fa-2x text-warning mb-2"></i>
+        <h6>Emergency Surgery</h6>
+      </div>
+    </div>
+    <!-- Add additional skills as needed -->
+  </div>
+</section>
+
+
+<section id="qualification" class="mb-5">
+  <h2 class="fw-bold text-center mb-4 border-bottom pb-2 text-success">Educational Qualification</h2>
+<div class="timeline">
+      <div class="timeline-event">
+        <div class="card timeline-content">
+        <div class="card-body">
+            <i class="fas fa-user-graduate"></i>
+          <h5 class="card-title">Master of Science in Data Science</h5>
+          <p class="card-text">Tech University | 2022 - 2024</p>
+          <p class="card-text">Specialized in Big Data Analytics and Machine Learning.</p>
+        </div>
+      </div>
+        <div class="timeline-badge bg-primary text-white"><i class="fas fa-user-graduate"></i></div>
+      </div>
+      <div class="timeline-event">
+       <div class="card timeline-content">
+        <div class="card-body">
+            <i class="fas fa-laptop-code"></i>
+          <h5 class="card-title">Bachelor of Science in CSE</h5>
+          <p class="card-text">University of Example | 2017 - 2021</p>
+          <p class="card-text">Focused on Software Engineering, AI, and Data Structures.</p>
+        </div>
+      </div>
+        <div class="timeline-badge  bg-danger text-white"><i class="fas fa-laptop-code"></i></div>
+      </div>
+      <div class="timeline-event">
+        <div class="card timeline-content">
+        <div class="card-body">
+            <i class="fas fa-school"></i>
+          <h5 class="card-title">Higher Secondary Certificate (HSC)</h5>
+          <p class="card-text">ABC College | 2015 - 2017</p>
+          <p class="card-text">Major in Science, GPA: 5.00</p>
+        </div>
+      </div>
+        <div class="timeline-badge bg-success text-white"><i class="fas fa-school"></i></div>
+      </div>
+    </div>
+</section>
+
+
+
+<section class="py-5 bg-light" id="experience">
+    <h2 class="text-center text-primary fw-bold mb-5">Personal Experience</h2>
+
+    <div class="row g-4">
+      <!-- Experience Card 1 -->
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                <i class="bi bi-briefcase-fill fs-5"></i>
+              </div>
+              <div>
+                <h5 class="card-title mb-0 fw-semibold">Software Developer Intern</h5>
+                <small class="text-muted">Save the Children | Sept 2024 – Present</small>
+              </div>
+            </div>
+            <p class="card-text">Developed ASP.NET Core modules and managed SQL Server databases. Collaborated in a team to deliver real-time apps supporting education initiatives.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Card 2 -->
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                <i class="bi bi-bar-chart-line-fill fs-5"></i>
+              </div>
+              <div>
+                <h5 class="card-title mb-0 fw-semibold">Research Assistant</h5>
+                <small class="text-muted">IEEE Conference | Jan 2024 – Aug 2024</small>
+              </div>
+            </div>
+            <p class="card-text">Worked on DDoS detection research using machine learning. Contributed to model training and paper writing, resulting in IEEE Xplore publication.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Card 3 -->
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="icon bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                <i class="bi bi-award-fill fs-5"></i>
+              </div>
+              <div>
+                <h5 class="card-title mb-0 fw-semibold">Poster Presentation Winner</h5>
+                <small class="text-muted">TechFest | Oct 2023</small>
+              </div>
+            </div>
+            <p class="card-text">Won first prize for presenting a real-time security solution at the university tech fair. Focused on anomaly detection in academic networks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Card 4 -->
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="icon bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                <i class="bi bi-lightbulb-fill fs-5"></i>
+              </div>
+              <div>
+                <h5 class="card-title mb-0 fw-semibold">Tech Volunteer</h5>
+                <small class="text-muted">University Events | 2022 – 2023</small>
+              </div>
+            </div>
+            <p class="card-text">Supported organizing tech-based workshops and coding contests. Acted as a mentor and managed registration systems using PHP and MySQL.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

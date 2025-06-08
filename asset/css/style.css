@@ -9,6 +9,8 @@ body {
 }
 
 
+
+
 /* General Navbar Styles */
 .nav-link {
   margin-left: 20px;
@@ -24,7 +26,7 @@ body {
 
 /* Book Appointment Button */
 .BookAppointmentBtn {
-  background-color: #F4D300;
+  background-color: #ffffff;
   color: #2d9911;
 }
 
@@ -235,7 +237,7 @@ body {
 .marquee-inner {
   display: flex;
   width: max-content;
-  animation: scroll-left 8s linear infinite;
+  animation: scroll-left 15s linear infinite;
 }
 
 .marquee:hover .marquee-inner {
@@ -251,6 +253,9 @@ body {
   font-size: 20px;
   padding: 0 1rem;
   text-decoration: none;
+  background-color: green; 
+  border-radius: 5px;
+  color: white;;
 }
 
 @keyframes scroll-left {
@@ -283,7 +288,7 @@ body {
 }
 
 .doctor-image {
-  width: 100%;
+  width: 400px;
 }
 
 
@@ -367,6 +372,18 @@ body {
 }
 
 /* Time Schedule */
+.time-schedule-content {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 10px;
+}
+
+.time-schedule-content:hover {
+  transform: translateZ(0) scale(1.02) translateY(-5px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  background-color: #eef1f3 !important;
+}
+
+
 .card-blue {
       background-color: green;
       color: white;
@@ -375,14 +392,12 @@ body {
 
 /* service card */
 .service-card {
-  background: linear-gradient(135deg, #C9AC09, #8DB311, #138309);
-  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.274);
+  color: green;
   transition: transform 0.2s ease;
   height: 100%;
-  border: 5px solid rgba(255, 255, 255, 0.1);
+
 }
 
 .service-card:hover {
@@ -392,16 +407,17 @@ body {
 .service-icon {
   height: 50px;
   margin-bottom: 15px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color:green;
   border-radius: 50%;
   padding: 5px;
 }
 
 .view-all-btn {
-  background-color: #FFD700;
+  background-color: #ffffff;
   color: green;
+  border:1px solid rgba(0, 128, 0, 0.329);
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
@@ -544,7 +560,7 @@ body {
 
 .preview-card,
 .video-card {
-  background: linear-gradient(135deg, #C9AC09, #8DB311, #0D9800);
+  background: rgb(0, 128, 43);
 }
 
 /* article section */
@@ -573,7 +589,7 @@ body {
   border: 1px solid hsl(211, 32%, 86%);
   border-radius: 0.5rem;
   overflow: hidden;
-  background: linear-gradient(135deg, #bcc909, #8DB311, #0D9800, #0c6104);
+  background: green;
   transition: transform 0.2s ease-in-out;
   height: 100%;
 }
@@ -632,7 +648,7 @@ body {
 }
 
 .swiper-slide {
-  background: linear-gradient(135deg, #bcc909, #8DB311, #0D9800, #0c6104);
+  background: green;
   width: 10rem;
   height: 30rem;
   position: relative;
@@ -711,8 +727,9 @@ body {
 
     .review-box {
       background: #fff;
-      border: 1px solid #dee2e6;
-      border-radius: 12px;
+      border: 1px solid rgba(0, 128, 0, 0.26);
+      color: green;
+      border-radius: 8px;
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
