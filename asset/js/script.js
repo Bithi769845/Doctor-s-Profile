@@ -26,37 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
- // publication section
-    let currentPage = 1;
-    const projectsPerPage = 4;
-    let projects = document.querySelectorAll('.project-card');
-    let totalPages = Math.ceil(projects.length / projectsPerPage);
-
-    function paginate() {
-      const start = (currentPage - 1) * projectsPerPage;
-      const end = start + projectsPerPage;
-      projects.forEach((project, index) => {
-        project.style.display = index >= start && index < end ? 'block' : 'none';
-      });
-    }
-
-    function previousPage() {
-      if (currentPage > 1) {
-        currentPage--;
-        paginate();
-      }
-    }
-
-    function nextPage() {
-      if (currentPage < totalPages) {
-        currentPage++;
-        paginate();
-      }
-    }
-
-    // Initial load
-    paginate();
-
 
        // review section
      new Swiper('.swiper', {
